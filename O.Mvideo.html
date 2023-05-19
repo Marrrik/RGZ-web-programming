@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,18 @@
     <title>М.Видео</title>
     <link rel="stylesheet" href="mainvideo.css">
     <script>
-       
+
     </script>
 
     <style>
-        .intro_in{
+        .intro_in {
             width: 100%;
             max-width: 880px;
             margin: 0 auto;
             text-align: center;
         }
-        .Privetstvie{
+
+        .Privetstvie {
             color: #fff;
             font-size: 10px;
             font-weight: 700;
@@ -25,12 +27,13 @@
             line-height: 1;
 
         }
-        .lern{
+
+        .lern {
             text-decoration: none;
             display: inline-block;
             min-width: 140px;
             width: auto;
-            padding: 5px 10px ;
+            padding: 5px 10px;
             height: 50px;
             line-height: 40px;
             border-radius: 45px;
@@ -46,17 +49,20 @@
             box-shadow: 0 8px 15px rgba(230, 70, 70, 0.062);
             transition: .3s;
         }
+
         .lern:hover {
             background: white;
             box-shadow: 0 15px 20px rgba(206, 58, 58, 0.4);
             color: rgb(255, 1, 1);
             transform: translateY(-7px);
-        }     
-        .lern:active{
+        }
+
+        .lern:active {
             font-size: 10px;
             color: rgb(255, 127, 80);
         }
-        .Link_monitor{
+
+        .Link_monitor {
             width: 100%;
             position: absolute;
             bottom: 0;
@@ -65,22 +71,182 @@
             z-index: 2;
 
         }
-        .in_Link_monitor{
+
+        .in_Link_monitor {
             display: flex;
             justify-content: space-between;
         }
-        
-        .monitor{
+
+        .monitor {
             width: 24%;
             color: #fff;
             font: bold;
             font-size: 18pt;
         }
+        .monitorr{
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .verh_2_intro {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 30px;
+            text-align: justify;
+        }
+
+        .Zagolovok {
+            font-size: 24pt;
+            text-align: center;
+            color: black;
+            font-family: 'Caushan Script';
+            font-weight: bold;
+        }
+
+        .Zagolovok_ist {
+            font-size: 16pt;
+            text-align: left;
+            color: black;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+            font-weight: bold;
+
+        }
+
+        .text_osnovateli {
+            color: black;
+            font-size: 12pt;
+        }
+
+        .text_Histori {
+            color: black;
+            font-size: 12pt;
+            font-weight: 600;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        }
+
+        .sered_2_intro {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 30px;
+            margin-left: 0;
+            text-align: justify;
+        }
 
 
+
+        /* слайдер */
+        .block_sl {
+            position: absolute;
+            right: 0;
+            width: 500px;
+            height: 600px;
+            margin-top: 80px;
+        }
+
+        #slider article {
+            width: 20%;
+            float: left;
+        }
+
+        #slider .image {
+            width: 500%;
+            line-height: 0;
+        }
+
+        #overflow {
+            width: 100%;
+            overflow: hidden;
+
+        }
+
+        #dectop:checked~#slider {
+            /*размер всего слайдера*/
+            max-width: 30%;
+        }
+
+
+        label,a {
+            cursor: pointer;
+        }
+
+        .slider_block input {
+            display: none;
+
+        }
+
+        #switch1:checked~#slider .image {
+            margin-left: 0;
+        }
+
+        #switch2:checked~#slider .image {
+            margin-left: -100%;
+        }
+
+        #switch3:checked~#slider .image {
+            margin-left: -200%;
+        }
+
+        #active label {
+            border-radius: 10px;
+            display: inline-block;
+            width: 20%;
+            height: 12%;
+            background: #bbb;
+        }
+
+        #active {
+            height: 50px;
+            width: 570px;
+            text-align: left;
+        }
+
+        #active label:hover {
+            /*чекбокс при наведении*/
+            background: #dd3098;
+            border-color: #ce2392 !important;
+        }
+
+        #switch1:checked~#active label:nth-child(1),
+        #switch2:checked~#active label:nth-child(2),
+        #switch3:checked~#active label:nth-child(3) {
+            background-color: #520232;
+            border-color: #ff01f2 !important;
+        }
+
+        #slider .image {
+            transition: 800ms cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        .bt_back{
+            color: white;
+            text-decoration: none;
+            margin-left: 95%;
+            transition: 0.3s;
+            border: 4px solid rgb(218, 11, 11);
+            color: rgb(219, 67, 67);
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 20px;
+        }
+
+        .bt_back:hover{
+            color: grey;
+            transition-duration: 0.3s;
+            border: 5px solid grey;
+            color: grey;
+            font-size: 40px;
+        }
+
+        .bt_back:active{
+            color: grey;
+            transition-duration: 0.3s;
+            border: 4px solid grey;
+            color: grey;
+            font-size: 35px;
+        }
     </style>
 
 </head>
+
 <body>
     <header>
         <div class="verh">
@@ -90,30 +256,191 @@
                 <a class="floating-button" href="">Контактные данные</a>
                 <a class="floating-button" href="">Видео</a>
             </div>
-            <div class="log">
-                <a href="https://www.mvideo.ru/">
-                    <img class="heder_logo" src="марку мвидно.png">
-                </a>
-            </div>
         </div>
     </header>
-    
+
     <main>
-        <div class="intro">
+        <div class="intro" id="Intro_1">
             <div class="BOX">
                 <div class="intro_in">
-                    <div class="Privetstvie"><img src="Logo.png" style="width: 100%;"></div>
-                    <a class="lern"href="">Узнать</a>
+                    <div class="Privetstvie"><a href="https://www.mvideo.ru/"><img src="Logo.png"
+                                style="width: 100%;"></a></div>
+                    <a class="lern" href="#startIntro">Узнать</a>
                 </div>
             </div>
             <div class="Link_monitor">
                 <div class="BOX">
                     <div class="in_Link_monitor">
-                        <div class="monitor"><b>Основатели</b></div>
-                        <div class="monitor"><b>История</b></div>
+                        <div class="monitor"><b><a class="monitorr" href="#Os">Основатели</a></b></div>
+                        <div class="monitor"><b><a class="monitorr" href="#His">История</a></b></div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="intro_2" id="startIntro">
+            <div class="block_sl">
+                <div class="slider_block">
+                    <article id="slider">
+                        <input checked type="radio" name="slider" id="switch1">
+                        <input type="radio" name="slider" id="switch2">
+                        <input type="radio" name="slider" id="switch3">
+
+                        <div id="slider">
+                            <div id="overflow">
+                                <div class="image">
+                                    <article><img src="Осн.1.jpg" style="width: 350px; height: 400px;"></article>
+                                    <article><img src="осн2.jpg" style="width: 350px; height: 400px;"></article>
+                                    <article><img src="3осн.jpg" style="width: 350px; height: 400px;"></article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="active">
+                            <label for="switch1"></label>
+                            <label for="switch2"></label>
+                            <label for="switch3"></label>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="BOX_2">
+
+                <div class="verh_2_intro">
+
+                    <h2 class="Zagolovok" id="Os">Основатели</h2>
+                    <div class="text_osnovateli">
+                        <p style="text-indent: 25px;">
+                            Сеть основана 3 марта 1993 года Александром Тынкованом, его братом Михаилом Тынкованом и
+                            Павлом
+                            Бреевым, когда был открыт первый магазин «Мир Видео» в Москве, на улице Маросейка. В течение
+                            1990-х сеть работала только в Москве. В 2001 году «М.Видео» открыла свой первый магазин в
+                            регионе — в Нижнем Новгороде. В 2007 году компания открывает 100-й магазин (в
+                            Санкт-Петербурге).
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="BOX_3">
+                <div class="sered_2_intro">
+                    <h2 class="Zagolovok_ist">1993 год</h2>
+                    <div class="text_Histori" id="His">
+                        <p style="text-indent: 25px;">
+                            Мы открыли первый магазин в Москве на улице Маросейке — тогда он назывался «Мир Видео».
+                            Ассортимент, конечно, отличался от современного, но концепция была той же: предложить
+                            покупателям все виды техники, которые им нужны. Наши клиенты идею оценили, и в 1994 году у
+                            «М.Видео» появился второй магазин.
+                        </p>
+                        <h2 class="Zagolovok_ist">1997 год</h2>
+                        <p style="text-indent: 25px;">
+                            Магазины в 90-х обычно представляли собой несколько прилавков и продавцов. Чтобы посмотреть
+                            понравившийся товар, нужно было ждать, пока продавец освободится и сможет его показать. Мы
+                            решили принципиально изменить эту концепцию — сделали торговую точку, где вся техника была в
+                            свободном доступе. Можно было взять товар, покрутить его в руках, оценить качество. В этом
+                            же году «М.Видео» открывает и собственный сервисный центр для потребительской электроники.
+                            Починить телевизор или плеер тогда было проблемой.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="intro_3">
+            <div class="BOX_3">
+                <div class="sered_2_intro">
+                    <h2 class="Zagolovok_ist">2000 год</h2>
+                    <div class="text_Histori">
+                        <p style="text-indent: 25px;">
+                            Компания запустила интернет-магазин www.mvideo.ru, став одним из пионеров онлайн-торговли
+                            потребительской электроникой в России. Сайт работал и раньше, но только как информационный:
+                            на нем мы рассказывали об акциях, принимали обращения от клиентов.
+                        </p>
+                        <h2 class="Zagolovok_ist">2007 год</h2>
+                        <p style="text-indent: 25px;">
+                            Произошло событие, не особо важное для клиентов, но принципиальное с точки зрения развития
+                            бизнеса. Компания «М.Видео» первой среди продавцов электроники в России вышла на биржу,
+                            проведя IPO. Российским и международным инвесторам было продано около 30% акций.
+                        </p>
+                        <h2 class="Zagolovok_ist">2011 год</h2>
+                        <p style="text-indent: 25px;">
+                            Сеть магазинов (а к этому времени у нас работало уже около 300 точек продаж) стала
+                            переходить на омниканальную модель. Это когда все цены, ассортимент, услуги одинаковы как в
+                            физических магазинах, так и в онлайне. Чуть позже такая модель станет глобальным трендом, а
+                            в 2011-м была в новинку.
+                        </p>
+                        <h2 class="Zagolovok_ist">2014 год</h2>
+                        <p style="text-indent: 25px;">
+                            Запустили креативную кампанию «НИИ Р.А.З.У.М.», в рамках которой компания впервые в своей
+                            истории использовала образ знаменитости в рекламной коммуникации. Лицом компании стал
+                            телеведущий Александр Пушной, появившийся во всех визуальных коммуникациях: от интернета и
+                            outdoor-форматов до телевизионных роликов.
+                        </p>
+                        <h2 class="Zagolovok_ist">2015 год</h2>
+                        <p style="text-indent: 25px;">
+                            К онлайн-покупкам уже все привыкли, но не каждый был готов ждать курьера и платить за
+                            доставку.
+                            Поэтому мы предложили клиентам забирать купленную технику в любом удобном магазине «М.Видео»
+                            —
+                            или даже специальных точках выдачи, пикап-пойнтах.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="intro_4">
+            <div class="BOX_3">
+                <div class="sered_2_intro">
+                    <h2 class="Zagolovok_ist">2016 год</h2>
+                    <div class="text_Histori">
+                        <p style="text-indent: 25px;">
+                            У нас появились «магазины в магазинах» — выделенные зоны m_mobile, ориентированные на
+                            продажу мобильных устройств. Со своими кассами, продавцами, большим ассортиментом. Кстати, о
+                            продавцах (не только m_mobile, но и других отделов): для них мы создали внутреннее
+                            приложение с максимально полной информацией по товарам. Такой софт был уникален не только
+                            для России, но и для Европы.
+                        </p>
+                        <p style="text-indent: 25px;">
+                            Новые возможности появились и у клиентов. Теперь кредит можно было запросить в онлайн-режиме
+                            сразу в 10 банках, причем по одной анкете. До этого момента процедура в магазине занимала
+                            больше времени, и документы приходилось готовить для каждого банка отдельно.
+                        </p>
+                        <h2 class="Zagolovok_ist">2018 год</h2>
+                        <p style="text-indent: 25px;">
+                            Знаковый для нас: в этом году мы объединились с сетью «Эльдорадо». Некоторые магазины после
+                            этого сменили вывески, но в целом покупатели только выиграли: ассортимент расширился,
+                            выгодных программ стало больше.
+                        </p>
+                        <p style="text-indent: 25px;">
+                            В том же году мы запустили концепцию OneRetail. Сделали клиентский путь бесшовным: покупать
+                            стало одинаково удобно, где бы ты ни находился. Большое значение имеет мобильное приложение,
+                            им можно пользоваться даже в магазине. Магазины при этом остались основной точкой контакта с
+                            клиентом: здесь товар можно лично посмотреть, получить консультацию, забрать заказ с
+                            самовывозом.
+                        </p>
+                        <h2 class="Zagolovok_ist">2019 год</h2>
+                        <p style="text-indent: 25px;">
+                            Мы решили уделить еще больше внимания проблеме утилизации ненужной техники и элементов
+                            питания, включая обычные батарейки. Возможность сдать их на переработку через «М.Видео»
+                            получили жители 17 регионов России. С тех пор с нашей помощью утилизировано более 125 000
+                            единиц или более 1300 тонн бытовой техники.
+                        </p>
+                        <h2 class="Zagolovok_ist">Сейчас</h2>
+                        <p style="text-indent: 25px;">
+                            Мы каждый год внедряем новые сервисы или улучшаем существующие, чтобы сделать покупки еще
+                            приятнее и удобнее. Оставайтесь с нами и обязательно регистрируйтесь в нашей программе
+                            лояльности, чтобы покупки были еще более выгодными. А еще специально ко дню рождения у нас
+                            появились новые скидки и выгодные предложения. Приходите на праздник!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="back_butten">
+            <a class="bt_back" href="#Intro_1">&uarr;</a>
         </div>
     </main>
 
@@ -121,4 +448,5 @@
 
     </footer>
 </body>
+
 </html>

@@ -63,19 +63,52 @@ header {
     justify-content: center;
     display: flex;
 }
-.heder_logo{
+/* .heder_logo{
     width: 80px;
     height: 60px;
     margin-right: 30px;
+} */
 
-    
-}
+
+/* Тут думаю о центре или слева (beetwen) */
 .verh{
     display: flex;
-    justify-content: space-between;
+    justify-content: center; 
 }
 .BOX{
     width: 40%;
     max-width: 1200px;
     margin: 0 auto;
+}
+.BOX_2 {
+  width: 60%;
+  max-width: 1000px;
+  margin-left: 50px;
+  
+  
+}
+.BOX_3 {
+  width: 60%;
+  margin: 0 auto;
+  margin-left: 50px;
+}
+  .intro_2 {
+    padding: 80px 0;
+    height: 100vh;
+    width: 100%;
+}
+
+  .intro_3 {
+    width: 100%;
+    height: 100vh;
+    background: url("фон-2.jpg") center no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+}
+.intro_4 {
+  padding: 80px 0;
+  height: 100vh;
+  width: 100%;
 }
