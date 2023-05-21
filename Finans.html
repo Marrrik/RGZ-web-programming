@@ -8,14 +8,45 @@
     <link rel="stylesheet" href="finans.css">
     <style>
     </style>
+    <script>
+        let AprelClosePrice = [190.3,207.4,190.5,205.1,191.5,205.1,188,201,188.6,188.7,193.5,192.4,193.9,192.1,192,194,193.8,193.5,194.4,194.2,205.9,205.5];
+        let AprelPrice = [194.5,189.5,209.4,203.4,193.3,188.6,208.7,203,191.5,187,208.6,195,189.7,186.5,194.9,187.5,199, 190.6, 195.3,190.1,195,192.6,192,198,190.9,191.7,194.4,195.5,193.5,205.9,193.4,208,202.2];
+        function ShowMax(AprelPrice){
+            let Max = Math.max.apply(null, AprelPrice);
+            let VivodMax = document.getElementById("ResultMax");
+            VivodMax.innerHTML = "Максимальное значение за апрель:" + Max + " Руб."
+        }
+        function ShowMin(AprelPrice){
+            let Min = Math.min.apply(null, AprelPrice);
+            let VivodMin = document.getElementById("ResultMin");
+            VivodMin.innerHTML = "Минимальное значение за апрель:" + Min + " Руб."
+        }
+        function ShowDisp (AprelClosePrice){
+            let sum = AprelClosePrice.map(i=>x+=i, x=0).reverse()[0]
+            let kolvozn = AprelClosePrice.length
+            let midl = sum/kolvozn
+            let zn = AprelClosePrice.map(i=>x+=(i-midl)**2, x=0).reverse()[0]
+            let sr_kv_2 = zn/kolvozn
+            let otkl = Math.sqrt(sr_kv_2)
+            let VivodDisp = document.getElementById("ResultDisp");
+            VivodDisp.innerHTML = "Среднеквалратическое за прель:" + otkl + " Руб."
+        }
+        function ShowBoxMin(){
+            let Blok_min = document.getElementById('ResultMin')
+            if(Blok_min.style.display == 'none'){
+                Blok_min.style.display = 'block'
+            }
+            else{Blok_min.style.display = 'none'}
+        }
+    </script>
 </head>
 <body>
     <header>
         <div class="verh">
             <div>
                 <a class="floating-button" href="O.Mvideo.html">О компании</a>
-                <a class="floating-button" href="">Основные финансовые показатели</a>
-                <a class="floating-button" href="">Контактные данные</a>
+                <a class="floating-button" href="Finans.html">Основные финансовые показатели</a>
+                <a class="floating-button" href="Kontact.html">Контактные данные</a>
                 <a class="floating-button" href="">Видео</a>
             </div>
         </div>
@@ -30,7 +61,147 @@
                 </div>
             </div>
         </div>
+        <div class="intro_2" id="startIntro">
+            <div class="verh_2_intro">
+                <h2 class="Zagolovok">Основные финансовые показатели</h2>
+                    <h3 class="text_o_fin">
+                        Капитализация: 35,3 млрд ₽ (196,3 ₽ за акцию)<br>
+                        количество акций: 17 982 980 штук
+                    </h3>
+            </div>
+            <div class="Knopki">
+                <div>
+                    <div class="bt_open" onclick="ShowMin(AprelPrice)">Минимальное значение</div>
+                    <div id="ResultMin" onclick="ShowBoxMin()"></div>
+                </div>
+                <div>
+                    <div class="bt_open" onclick="ShowMax(AprelPrice)">Максимальное значение</div>
+                    <div id="ResultMax"></div>
+                </div>
+                <div>
+                    <div class="bt_open" onclick="ShowDisp(AprelClosePrice)">Среднеквадр. отклонение</div>
+                    <div id="ResultDisp"></div>
+                </div>
+            </div>
+            <h2 class="Zagolovok">Таблица Max и Min значений за апрель</h2>
+            <table class="tabl" width="100%">
+                <tr>
+                    <th>Дата</th>
+                    <th>Максимум</th>
+                    <th>Минимум</th>
+                    <th>Цена закрытия</th>
+                    <th>Дата</th>
+                    <th>Максимум</th>
+                    <th>Минимум</th>
+                    <th>Цена закрытия</th>
+                </tr>
+                <tr>
+                    <td>03.04.2023</td>
+                    <td>194.5</td>
+                    <td>189.5</td>
+                    <td>190.3</td>
+                    <td>20.04.2023</td>
+                    <td>195</td>
+                    <td>191.7</td>
+                    <td>194.4</td>
+                </tr>
+                <tr>
+                    <td>04.04.2023</td>
+                    <td>193.3</td>
+                    <td>188.6</td>
+                    <td>191.5</td>
+                    <td>21.04.2023</td>
+                    <td>195.9</td>
+                    <td>193.5</td>
+                    <td>194.2</td>
+                </tr>
+                <tr>
+                    <td>05.04.2023</td>
+                    <td>191.5</td>
+                    <td>187</td>
+                    <td>188</td>
+                    <td>24.04.2023</td>
+                    <td>205.9</td>
+                    <td>193.4</td>
+                    <td>205.9</td>
+                </tr>
+                <tr>
+                    <td>06.04.2023</td>
+                    <td>189.7</td>
+                    <td>187.4</td>
+                    <td>188.6</td>
+                    <td>26.04.2023</td>
+                    <td>209.4</td>
+                    <td>203.4</td>
+                    <td>207.4</td>
+                </tr>
+                <tr>
+                    <td>07.04.2023</td>
+                    <td>189.5</td>
+                    <td>186.5</td>
+                    <td>188.7</td>
+                    <td>27.04.2023</td>
+                    <td>208.7</td>
+                    <td>203</td>
+                    <td>205.1</td>
+                </tr>
+                <tr>
+                    <td>10.04.2023</td>
+                    <td>194.9</td>
+                    <td>187.5</td>
+                    <td>193.5</td>
+                    <td>28.04.2023</td>
+                    <td>208.6</td>
+                    <td>195</td>
+                    <td>201</td>
+                </tr>
+                <tr>
+                    <td>11.04.2023</td>
+                    <td>199</td>
+                    <td>190.6</td>
+                    <td>192.4</td>
+                </tr>
+                <tr>
+                    <td>12.04.2023</td>
+                    <td>195.3</td>
+                    <td>199.2</td>
+                    <td>193.9</td>
+                </tr>
+                <tr>
+                    <td>13.04.2023</td>
+                    <td>195.9</td>
+                    <td>190.1</td>
+                    <td>192.1</td>
+                </tr>
+                <tr>
+                    <td>14.04.2023</td>
+                    <td>194</td>
+                    <td>190.3</td>
+                    <td>192</td>
+                </tr>
+                <tr>
+                    <td>17.04.2023</td>
+                    <td>195</td>
+                    <td>192.6</td>
+                    <td>194</td>
+                </tr>
+                <tr>
+                    <td>18.04.2023</td>
+                    <td>194.8</td>
+                    <td>192</td>
+                    <td>193.8</td>
+                </tr>
+                <tr>
+                    <td>19.04.2023</td>
+                    <td>198</td>
+                    <td>190.9</td>
+                    <td>193.5</td>
+                </tr>
+            </table>
+        </div>
     </main>
-    <footer></footer>
+    <footer style="text-align: right; color: black;">
+        &copy;М.Видео
+    </footer>
 </body>
 </html>
