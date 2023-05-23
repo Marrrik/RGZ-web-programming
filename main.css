@@ -1,0 +1,81 @@
+.btn {
+    display: inline-block; /* Строчно-блочный элемент */
+    background: hsl(0, 95%, 48%); 
+    color: #fff; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */
+    margin-top: 15px;
+    margin-left: 15px;
+   }
+   .btn:hover {
+     text-shadow: #fff 0px 0px 10px;
+     box-shadow: 0px 0px 10px;
+     cursor: pointer;
+   }
+   body {
+    margin: 0;
+    overflow-x:unset;
+   }
+    header {
+      width: 100%;
+      color: rgb(255, 255, 255);
+      padding: 10px;
+      z-index: 1;
+      transition-duration: 0s;
+      transition: 1s;
+   }
+   header:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(237, 12, 12);
+    transition-duration: 0.5s;
+    transition: 1s;
+   }
+   header img {
+    position: absolute;
+    z-index: 1;
+    height: 50px;
+    width: 100px;
+    right: 0;
+    top: 15px;
+   }
+   .vkr {
+    text-indent: 25px;
+    left: 45%;
+    text-align: center;
+    font-family: Arial, 'Times New Roman', Times, serif;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -10px;
+    font-size: 15pt;
+    font-weight: bold;
+    position: fixed;
+    z-index: 5;
+   }
+   .textInff{
+    position: relative;
+    text-indent: 25px;
+    text-align: justify;
+    font-family: Arial, 'Times New Roman', Times, serif;
+    margin-left: 10px;
+    margin-right: 10px;
+ 
+    font-size: 12pt;
+   }
+   .textInf{
+    text-indent: 25px;
+    text-align: justify;
+    font-family: Arial, 'Times New Roman', Times, serif;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-size: 12pt;
+   }
+   footer {
+        background-color: black;
+        color: white; 
+        padding: 10px; 
+        font-size: 16pt;  
+        text-align: right;
+   }
+
