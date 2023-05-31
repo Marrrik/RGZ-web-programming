@@ -9,34 +9,66 @@
     <style>
     </style>
     <script>
+
+
         let AprelClosePrice = [190.3,207.4,190.5,205.1,191.5,205.1,188,201,188.6,188.7,193.5,192.4,193.9,192.1,192,194,193.8,193.5,194.4,194.2,205.9,205.5];
         let AprelPrice = [194.5,189.5,209.4,203.4,193.3,188.6,208.7,203,191.5,187,208.6,195,189.7,186.5,194.9,187.5,199, 190.6, 195.3,190.1,195,192.6,192,198,190.9,191.7,194.4,195.5,193.5,205.9,193.4,208,202.2];
+
+
         function ShowMax(AprelPrice){
-            let Max = Math.max.apply(null, AprelPrice);
-            let VivodMax = document.getElementById("ResultMax");
-            VivodMax.innerHTML = "Максимальное значение за апрель:" + Max + " Руб."
-        }
-        function ShowMin(AprelPrice){
-            let Min = Math.min.apply(null, AprelPrice);
-            let VivodMin = document.getElementById("ResultMin");
-            VivodMin.innerHTML = "Минимальное значение за апрель:" + Min + " Руб."
-        }
-        function ShowDisp (AprelClosePrice){
-            let sum = AprelClosePrice.map(i=>x+=i, x=0).reverse()[0]
-            let kolvozn = AprelClosePrice.length
-            let midl = sum/kolvozn
-            let zn = AprelClosePrice.map(i=>x+=(i-midl)**2, x=0).reverse()[0]
-            let sr_kv_2 = zn/kolvozn
-            let otkl = Math.sqrt(sr_kv_2)
-            let VivodDisp = document.getElementById("ResultDisp");
-            VivodDisp.innerHTML = "Среднеквалратическое за прель:" + otkl + " Руб."
-        }
-        function ShowBoxMin(){
-            let Blok_min = document.getElementById('ResultMin')
-            if(Blok_min.style.display == 'none'){
-                Blok_min.style.display = 'block'
+            let Blok_max = document.getElementById('ResultMax');
+            if(Blok_max.style.display == 'block'){
+                Blok_max.style.display = 'none'
             }
-            else{Blok_min.style.display = 'none'}
+
+            else{
+                let Max = Math.max.apply(null, AprelPrice);
+                let VivodMax = document.getElementById("ResultMax");
+                VivodMax.innerHTML = "Максимальное значение за апрель:" + Max + " Руб."
+                Blok_max.style.display = 'block'
+                Blok_max.style.border = '2px solid rgb(255, 0, 0)'
+                Blok_max.style.color = 'black'
+                console.log("2")
+            }
+        }
+
+
+        function ShowMin(AprelPrice){
+            let Blok_min = document.getElementById('ResultMin');
+            if(Blok_min.style.display == 'block'){
+                Blok_min.style.display = 'none'
+            }
+
+            else{
+                let Min = Math.min.apply(null, AprelPrice);
+                let VivodMin = document.getElementById("ResultMin");
+                VivodMin.innerHTML = "Минимальное значение за апрель:" + Min + " Руб."
+                Blok_min.style.display = 'block'
+                Blok_min.style.border = '2px solid rgb(255, 0, 0)'
+                Blok_min.style.color = 'black'
+                console.log("2")
+            }
+        }
+
+
+        function ShowDisp (AprelClosePrice){
+            let Blok_Disp = document.getElementById('ResultDisp');
+            if(Blok_Disp.style.display == 'block'){
+                Blok_Disp.style.display = 'none'
+            }
+            else{
+                let sum = AprelClosePrice.map(i=>x+=i, x=0).reverse()[0]
+                let kolvozn = AprelClosePrice.length
+                let midl = sum/kolvozn
+                let zn = AprelClosePrice.map(i=>x+=(i-midl)**2, x=0).reverse()[0]
+                let sr_kv_2 = zn/kolvozn
+                let otkl = Math.sqrt(sr_kv_2)
+                let VivodDisp = document.getElementById("ResultDisp");
+                VivodDisp.innerHTML = "Среднеквалратическое за прель:" + otkl + " Руб."
+                Blok_Disp.style.display = 'block'
+                Blok_Disp.style.border = '2px solid rgb(255, 0, 0)'
+                Blok_Disp.style.color = 'black'
+            }
         }
     </script>
 </head>
@@ -72,14 +104,14 @@
             <div class="Knopki">
                 <div>
                     <div class="bt_open" onclick="ShowMin(AprelPrice)">Минимальное значение</div>
-                    <div id="ResultMin" onclick="ShowBoxMin()"></div>
+                    <div id="ResultMin"></div>
                 </div>
                 <div>
                     <div class="bt_open" onclick="ShowMax(AprelPrice)">Максимальное значение</div>
                     <div id="ResultMax"></div>
                 </div>
                 <div>
-                    <div class="bt_open" onclick="ShowDisp(AprelClosePrice)">Среднеквадр. отклонение</div>
+                    <div id = 'pokaz' class="bt_open" onclick="ShowDisp(AprelClosePrice)">Среднеквадр. отклонение</div>
                     <div id="ResultDisp"></div>
                 </div>
             </div>

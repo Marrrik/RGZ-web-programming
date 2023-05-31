@@ -21,6 +21,8 @@ header {
     z-index: 1;
     transition-duration: 0s;
     padding-top: 20px;
+    background-image: url(фон-3.jpg);
+    position: fixed;
 }
 .verh{
     display: flex;
@@ -222,11 +224,13 @@ td:hover {
     background: red;
     box-shadow: 0 8px 15px rgba(230, 70, 70, 0.062);
     transition: .3s;
+
 }
 .bt_open:hover{
     background-color: rgb(255,154,138);
     transition-duration: 0.3s;
     color: red;
+    cursor: pointer;
 }
 
 footer {
@@ -236,14 +240,17 @@ footer {
     padding-right: 50px;
 }
 #ResultMax {
-    color: black;
+    color: #fff;
     font-weight: bold;
     font-size: 8pt;
     width: auto;
     height: 50px;
     border-radius: 15px;
-    border: 2px solid rgb(255, 0, 0);
+    /* border: 2px solid #fff; */
     display: none;
+    line-height: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 #ResultMin {
     color: black;
@@ -252,8 +259,11 @@ footer {
     width: auto;
     height: 50px;
     border-radius: 15px;
-    border: 2px solid rgb(255, 0, 0);
+    /* border: 2px solid rgb(255, 0, 0); */
     display: none;
+    line-height: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 #ResultDisp {
     color: black;
@@ -262,6 +272,9 @@ footer {
     width: auto;
     height: 50px;
     border-radius: 15px;
-    border: 2px solid rgb(255, 0, 0);
+    /* border: 2px solid rgb(255, 0, 0); */
     display: none;
+    line-height: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
